@@ -1,103 +1,279 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  Shield,
+  Broom,
+  Lightning,
+  Drop,
+  SwimmingPool,
+  Barbell,
+  ArrowRight,
+} from "@phosphor-icons/react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Home() {
+const services = [
+  {
+    title: "Security Services",
+    description:
+      "Expert security implementation with well-trained guards and advanced equipment.",
+    icon: Shield,
+  },
+  {
+    title: "Housekeeping",
+    description:
+      "Comprehensive cleaning and maintenance services for all types of properties.",
+    icon: Broom,
+  },
+  {
+    title: "Electrical Services",
+    description:
+      "Professional electrical maintenance and emergency support services.",
+    icon: Lightning,
+  },
+  {
+    title: "Plumbing Services",
+    description:
+      "Expert plumbing solutions with advanced conservative techniques.",
+    icon: Drop,
+  },
+  {
+    title: "Swimming Pool Maintenance",
+    description:
+      "Complete pool maintenance including water quality and infrastructure care.",
+    icon: SwimmingPool,
+  },
+  {
+    title: "Gym & Club House",
+    description:
+      "Professional maintenance and management of gym and clubhouse facilities.",
+    icon: Barbell,
+  },
+];
+
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen">
+        {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/facility1.jpg"
+            alt="Facility Management"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/70" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-bold text-white mb-6"
+            >
+              Elevating Facility Management to{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                New Heights
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto"
+            >
+              ISO 9001:2015 Certified Company delivering comprehensive facility
+              management solutions with precision and excellence.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
+              <Button
+                asChild
+                className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-lg px-10 h-14 rounded-full transition-all duration-300 shadow-[0_0_0_3px_rgba(59,130,246,0.1)] hover:shadow-[0_0_0_3px_rgba(59,130,246,0.2)]"
+              >
+                <Link href="/about-app" className="flex items-center">
+                  About the App
+                  <ArrowRight
+                    size={20}
+                    className="ml-2 transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                className="text-lg px-10 h-14 rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
+                onClick={() =>
+                  window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: "smooth",
+                  })
+                }
+              >
+                Learn More
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-l from-blue-500/10 to-purple-500/10 blur-3xl translate-x-1/2 translate-y-1/2" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                Excellence in Facility Management
+              </h2>
+              <p className="text-lg text-slate-600 mb-8">
+                Established in 2011, Thirumal Facilities has been at the
+                forefront of delivering exceptional facility management services
+                across multiple states in India.
+              </p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Our Vision
+                  </h3>
+                  <p className="text-slate-600">
+                    &ldquo;We strive to grow in-terms of sustainability,
+                    scalability and resource to enhance every client base with
+                    high level strategies and solutions.&rdquo;
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Our Mission
+                  </h3>
+                  <p className="text-slate-600">
+                    &ldquo;We accomplish best-in-class management solutions for
+                    every individual, residence and commercial activities
+                    through accountable strategy and technology.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <Image
+                src="/images/facility2.jpg"
+                alt="Modern Facility Management Services"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-blue-500/5 to-purple-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tl from-blue-500/5 to-purple-500/5 blur-3xl translate-x-1/2 -translate-y-1/2" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Comprehensive facility management solutions tailored to your needs
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white">
+                    <CardHeader>
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <Icon size={28} className="text-white" />
+                      </div>
+                      <CardTitle className="text-xl text-slate-900">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slate-600">{service.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Transform Your Facility Management?
+            </h2>
+            <p className="text-xl text-slate-300">
+              Experience the difference of working with an ISO 9001:2015
+              certified company. Let&apos;s discuss how we can elevate your
+              facility management to new heights.
+            </p>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default HomePage;
