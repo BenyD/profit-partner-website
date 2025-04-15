@@ -92,37 +92,41 @@ const Agents = () => {
       className="min-h-screen bg-gray-50 py-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block p-3 rounded-full bg-blue-100 mb-4"
+            className="inline-block p-2 sm:p-3 rounded-full bg-blue-100 mb-4"
           >
-            <Users size={32} className="text-blue-800" />
+            <Users size={24} className="text-blue-800" />
           </motion.div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Agents</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+            Our Agents
+          </h1>
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Meet our dedicated team of agents who are committed to providing
             exceptional service.
           </p>
         </div>
 
-        <div className="mb-8 flex justify-end">
+        <div className="mb-6 sm:mb-8 flex justify-end">
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-sm sm:text-base">
                 <Plus className="mr-2 h-4 w-4" />
                 Add Agent
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[600px]">
+            <DialogContent className="sm:max-w-[600px] w-[95vw]">
               <DialogHeader>
-                <DialogTitle>Add New Agent</DialogTitle>
+                <DialogTitle className="text-lg sm:text-xl">
+                  Add New Agent
+                </DialogTitle>
               </DialogHeader>
               <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label htmlFor="name" className="text-left sm:text-right">
                     Name
                   </Label>
                   <Input
@@ -131,11 +135,11 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, name: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="photo" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label htmlFor="photo" className="text-left sm:text-right">
                     Photo URL
                   </Label>
                   <Input
@@ -144,11 +148,14 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, photo: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="phoneNumber" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label
+                    htmlFor="phoneNumber"
+                    className="text-left sm:text-right"
+                  >
                     Phone Number
                   </Label>
                   <Input
@@ -157,11 +164,11 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, phoneNumber: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="address" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label htmlFor="address" className="text-left sm:text-right">
                     Address
                   </Label>
                   <Input
@@ -170,11 +177,14 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, address: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="aadharNumber" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label
+                    htmlFor="aadharNumber"
+                    className="text-left sm:text-right"
+                  >
                     Aadhar Number
                   </Label>
                   <Input
@@ -183,11 +193,14 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, aadharNumber: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="accountNumber" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label
+                    htmlFor="accountNumber"
+                    className="text-left sm:text-right"
+                  >
                     Account Number
                   </Label>
                   <Input
@@ -199,11 +212,11 @@ const Agents = () => {
                         accountNumber: e.target.value,
                       })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="ifscCode" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label htmlFor="ifscCode" className="text-left sm:text-right">
                     IFSC Code
                   </Label>
                   <Input
@@ -212,11 +225,11 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, ifscCode: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="bankName" className="text-right">
+                <div className="grid grid-cols-1 sm:grid-cols-4 items-center gap-2 sm:gap-4">
+                  <Label htmlFor="bankName" className="text-left sm:text-right">
                     Bank Name
                   </Label>
                   <Input
@@ -225,64 +238,94 @@ const Agents = () => {
                     onChange={(e) =>
                       setNewAgent({ ...newAgent, bankName: e.target.value })
                     }
-                    className="col-span-3"
+                    className="col-span-1 sm:col-span-3"
                   />
                 </div>
               </div>
               <div className="flex justify-end">
-                <Button onClick={handleAddAgent}>Add Agent</Button>
+                <Button
+                  onClick={handleAddAgent}
+                  className="text-sm sm:text-base"
+                >
+                  Add Agent
+                </Button>
               </div>
             </DialogContent>
           </Dialog>
         </div>
 
         <div className="bg-white rounded-lg shadow overflow-hidden">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Photo</TableHead>
-                <TableHead>Phone Number</TableHead>
-                <TableHead>Address</TableHead>
-                <TableHead>Aadhar Number</TableHead>
-                <TableHead>Account Number</TableHead>
-                <TableHead>IFSC Code</TableHead>
-                <TableHead>Bank Name</TableHead>
-                <TableHead>Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {agents.map((agent) => (
-                <TableRow key={agent.id}>
-                  <TableCell>{agent.name}</TableCell>
-                  <TableCell>
-                    {agent.photo && (
-                      <img
-                        src={agent.photo}
-                        alt={agent.name}
-                        className="h-10 w-10 rounded-full"
-                      />
-                    )}
-                  </TableCell>
-                  <TableCell>{agent.phoneNumber}</TableCell>
-                  <TableCell>{agent.address}</TableCell>
-                  <TableCell>{agent.aadharNumber}</TableCell>
-                  <TableCell>{agent.accountNumber}</TableCell>
-                  <TableCell>{agent.ifscCode}</TableCell>
-                  <TableCell>{agent.bankName}</TableCell>
-                  <TableCell>
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      onClick={() => handleDeleteAgent(agent.id)}
-                    >
-                      Delete
-                    </Button>
-                  </TableCell>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="whitespace-nowrap">Name</TableHead>
+                  <TableHead className="whitespace-nowrap">Photo</TableHead>
+                  <TableHead className="whitespace-nowrap">Phone</TableHead>
+                  <TableHead className="hidden sm:table-cell">
+                    Address
+                  </TableHead>
+                  <TableHead className="hidden sm:table-cell">Aadhar</TableHead>
+                  <TableHead className="hidden sm:table-cell">
+                    Account
+                  </TableHead>
+                  <TableHead className="hidden sm:table-cell">IFSC</TableHead>
+                  <TableHead className="hidden sm:table-cell">Bank</TableHead>
+                  <TableHead className="whitespace-nowrap">Actions</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {agents.map((agent) => (
+                  <TableRow key={agent.id}>
+                    <TableCell className="font-medium whitespace-nowrap">
+                      {agent.name}
+                    </TableCell>
+                    <TableCell>
+                      {agent.photo ? (
+                        <img
+                          src={agent.photo}
+                          alt={agent.name}
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                          <Users size={16} className="text-gray-500" />
+                        </div>
+                      )}
+                    </TableCell>
+                    <TableCell className="whitespace-nowrap">
+                      {agent.phoneNumber}
+                    </TableCell>
+                    <TableCell className="hidden sm:table-cell">
+                      {agent.address}
+                    </TableCell>
+                    <TableCell className="hidden sm:table-cell">
+                      {agent.aadharNumber}
+                    </TableCell>
+                    <TableCell className="hidden sm:table-cell">
+                      {agent.accountNumber}
+                    </TableCell>
+                    <TableCell className="hidden sm:table-cell">
+                      {agent.ifscCode}
+                    </TableCell>
+                    <TableCell className="hidden sm:table-cell">
+                      {agent.bankName}
+                    </TableCell>
+                    <TableCell>
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => handleDeleteAgent(agent.id)}
+                        className="text-xs sm:text-sm"
+                      >
+                        Delete
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
     </motion.div>
