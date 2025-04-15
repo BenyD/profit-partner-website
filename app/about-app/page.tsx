@@ -124,33 +124,33 @@ const AboutApp = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl font-bold text-slate-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6 px-4">
                 Streamlining Facility Management Through Technology
               </h1>
               <div className="prose prose-slate mx-auto">
-                <p className="text-lg text-slate-600 mb-6">
+                <p className="text-base sm:text-lg text-slate-600 mb-6 px-4">
                   Thirumal Facilities App is a comprehensive platform designed
                   to revolutionize how businesses connect with skilled
                   workforce. Our mobile application simplifies the entire
                   process of manpower management, from posting requirements to
                   finalizing deals.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mt-12">
-                  <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-left mt-8 sm:mt-12 px-4">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md border border-slate-100">
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       For Clients
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="text-slate-600 text-base">
                       Post requirements, browse qualified service providers, and
                       manage workforce efficiently through our intuitive
                       platform.
                     </p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md border border-slate-100">
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       For Providers
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="text-slate-600 text-base">
                       Connect with businesses, showcase your services, and grow
                       your client base with our streamlined approach.
                     </p>
@@ -171,26 +171,28 @@ const AboutApp = () => {
           viewport={{ once: true }}
           className="container mx-auto px-4"
         >
-          <h2 className="text-4xl font-bold text-slate-900 text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4 px-4">
             Key Features
           </h2>
-          <p className="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             Everything you need to manage your workforce efficiently
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 px-4">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-4">
-                  {feature.icon}
+                <div className="w-12 sm:w-14 h-12 sm:h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-4">
+                  {React.cloneElement(feature.icon, { size: 24 })}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-slate-900">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600">{feature.description}</p>
+                <p className="text-slate-600 text-base">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -207,22 +209,22 @@ const AboutApp = () => {
           viewport={{ once: true }}
           className="container mx-auto px-4 relative z-10"
         >
-          <h2 className="text-4xl font-bold text-slate-900 text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4 px-4">
             How It Works
           </h2>
-          <p className="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             Simple steps to get started with our platform
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 px-4">
             {howItWorks.map((step, index) => (
               <motion.div key={index} variants={item} className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-4">
+                <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-slate-900">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-slate-900">
                   {step.title}
                 </h3>
-                <p className="text-slate-600">{step.description}</p>
+                <p className="text-slate-600 text-base">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -238,39 +240,32 @@ const AboutApp = () => {
           viewport={{ once: true }}
           className="container mx-auto px-4"
         >
-          <h2 className="text-4xl font-bold text-slate-900 text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-4 px-4">
             Built With Modern Tech
           </h2>
-          <p className="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             Leveraging cutting-edge technologies to deliver a seamless and
             reliable experience
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto px-4">
             {techStack.map((tech, index) => (
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
+                className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-lg">
-                    {tech.icon}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {tech.name}
-                      </h3>
-                      <Badge
-                        variant="secondary"
-                        className="bg-blue-100 text-blue-700 hover:bg-blue-200"
-                      >
-                        {tech.badge}
-                      </Badge>
-                    </div>
-                    <p className="text-slate-600 text-sm">{tech.description}</p>
-                  </div>
+                <div className="w-12 sm:w-14 h-12 sm:h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-4">
+                  {React.cloneElement(tech.icon, { size: 24 })}
                 </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900">
+                    {tech.name}
+                  </h3>
+                  <Badge variant="secondary" className="text-xs sm:text-sm">
+                    {tech.badge}
+                  </Badge>
+                </div>
+                <p className="text-slate-600 text-base">{tech.description}</p>
               </motion.div>
             ))}
           </div>

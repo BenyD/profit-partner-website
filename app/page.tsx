@@ -82,7 +82,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold text-white mb-6"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6"
             >
               Elevating Facility Management to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
@@ -94,7 +94,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto"
+              className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
             >
               ISO 9001:2015 Certified Company delivering comprehensive facility
               management solutions with precision and excellence.
@@ -104,11 +104,11 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4"
             >
               <Button
                 asChild
-                className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-lg px-10 h-14 rounded-full transition-all duration-300 shadow-[0_0_0_3px_rgba(59,130,246,0.1)] hover:shadow-[0_0_0_3px_rgba(59,130,246,0.2)]"
+                className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-base sm:text-lg px-6 sm:px-10 h-12 sm:h-14 rounded-full transition-all duration-300 shadow-[0_0_0_3px_rgba(59,130,246,0.1)] hover:shadow-[0_0_0_3px_rgba(59,130,246,0.2)]"
               >
                 <Link href="/about-app" className="flex items-center">
                   About the App
@@ -120,7 +120,7 @@ const HomePage = () => {
               </Button>
               <Button
                 variant="outline"
-                className="text-lg px-10 h-14 rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="text-base sm:text-lg px-6 sm:px-10 h-12 sm:h-14 rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300"
                 onClick={() =>
                   window.scrollTo({
                     top: window.innerHeight,
@@ -136,43 +136,44 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-l from-blue-500/10 to-purple-500/10 blur-3xl translate-x-1/2 translate-y-1/2" />
+      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+        {/* Decorative circles - Reduced size for mobile */}
+        <div className="absolute top-0 left-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-gradient-to-l from-blue-500/10 to-purple-500/10 blur-3xl translate-x-1/2 translate-y-1/2" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="px-4 sm:px-0"
             >
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">
                 Excellence in Facility Management
               </h2>
-              <p className="text-lg text-slate-600 mb-8">
+              <p className="text-base sm:text-lg text-slate-600 mb-6 sm:mb-8">
                 Established in 2011, Thirumal Facilities has been at the
                 forefront of delivering exceptional facility management services
                 across multiple states in India.
               </p>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">
                     Our Vision
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-base sm:text-lg">
                     &ldquo;We strive to grow in-terms of sustainability,
                     scalability and resource to enhance every client base with
                     high level strategies and solutions.&rdquo;
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">
                     Our Mission
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-base sm:text-lg">
                     &ldquo;We accomplish best-in-class management solutions for
                     every individual, residence and commercial activities
                     through accountable strategy and technology.&rdquo;
@@ -185,7 +186,7 @@ const HomePage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[300px] sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
                 src="/images/facility2.jpg"
@@ -199,10 +200,10 @@ const HomePage = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-blue-500/5 to-purple-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tl from-blue-500/5 to-purple-500/5 blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <section className="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
+        {/* Decorative circles - Reduced size for mobile */}
+        <div className="absolute top-1/2 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-gradient-to-tr from-blue-500/5 to-purple-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-gradient-to-tl from-blue-500/5 to-purple-500/5 blur-3xl translate-x-1/2 -translate-y-1/2" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
@@ -210,17 +211,17 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-16 px-4"
           >
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               Our Services
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
               Comprehensive facility management solutions tailored to your needs
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -233,15 +234,17 @@ const HomePage = () => {
                 >
                   <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white">
                     <CardHeader>
-                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <Icon size={28} className="text-white" />
+                      <div className="w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <Icon size={24} className="text-white" />
                       </div>
-                      <CardTitle className="text-xl text-slate-900">
+                      <CardTitle className="text-lg sm:text-xl text-slate-900">
                         {service.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-600">{service.description}</p>
+                      <p className="text-slate-600 text-base sm:text-lg">
+                        {service.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>

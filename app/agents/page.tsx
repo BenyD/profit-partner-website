@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Users, Plus } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -48,6 +48,19 @@ const Agents = () => {
     bankName: "",
   });
 
+  // Load agents from localStorage on component mount
+  useEffect(() => {
+    const savedAgents = localStorage.getItem("agents");
+    if (savedAgents) {
+      setAgents(JSON.parse(savedAgents));
+    }
+  }, []);
+
+  // Save agents to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("agents", JSON.stringify(agents));
+  }, [agents]);
+
   const handleAddAgent = () => {
     const agentWithId = {
       ...newAgent,
@@ -65,6 +78,10 @@ const Agents = () => {
       bankName: "",
     });
     setIsDialogOpen(false);
+  };
+
+  const handleDeleteAgent = (id: string) => {
+    setAgents(agents.filter((agent) => agent.id !== id));
   };
 
   return (
@@ -231,6 +248,7 @@ const Agents = () => {
                 <TableHead>Account Number</TableHead>
                 <TableHead>IFSC Code</TableHead>
                 <TableHead>Bank Name</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -252,6 +270,15 @@ const Agents = () => {
                   <TableCell>{agent.accountNumber}</TableCell>
                   <TableCell>{agent.ifscCode}</TableCell>
                   <TableCell>{agent.bankName}</TableCell>
+                  <TableCell>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={() => handleDeleteAgent(agent.id)}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

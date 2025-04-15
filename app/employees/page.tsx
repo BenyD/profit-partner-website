@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { UsersFour, Plus } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -50,6 +50,19 @@ const Employees = () => {
     bankName: "",
   });
 
+  // Load employees from localStorage on component mount
+  useEffect(() => {
+    const savedEmployees = localStorage.getItem("employees");
+    if (savedEmployees) {
+      setEmployees(JSON.parse(savedEmployees));
+    }
+  }, []);
+
+  // Save employees to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("employees", JSON.stringify(employees));
+  }, [employees]);
+
   const handleAddEmployee = () => {
     const employeeWithId = {
       ...newEmployee,
@@ -68,6 +81,10 @@ const Employees = () => {
       bankName: "",
     });
     setIsDialogOpen(false);
+  };
+
+  const handleDeleteEmployee = (id: string) => {
+    setEmployees(employees.filter((employee) => employee.id !== id));
   };
 
   return (
@@ -266,6 +283,7 @@ const Employees = () => {
                 <TableHead>Account Number</TableHead>
                 <TableHead>IFSC Code</TableHead>
                 <TableHead>Bank Name</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -288,6 +306,15 @@ const Employees = () => {
                   <TableCell>{employee.accountNumber}</TableCell>
                   <TableCell>{employee.ifscCode}</TableCell>
                   <TableCell>{employee.bankName}</TableCell>
+                  <TableCell>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={() => handleDeleteEmployee(employee.id)}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
